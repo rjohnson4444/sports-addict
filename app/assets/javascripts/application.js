@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require semantic_ui/semantic_ui
 //= require jquery_ujs
+//= require semantic_ui/semantic_ui
 //= require turbolinks
 //= require_tree .
 
