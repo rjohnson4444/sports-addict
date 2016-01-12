@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require semantic_ui/semantic_ui
+ *= require_tree .
  *= require_self
  */
 
@@ -71,6 +71,7 @@
 
      .footer.segment {
        padding: 5em 0em;
+       background: url(http://i.imgur.com/CvFSrVn.jpg) no-repeat fixed center !important;
      }
 
      .secondary.pointing.menu .toc.item {
