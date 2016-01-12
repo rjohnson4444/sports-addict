@@ -1,0 +1,31 @@
+<body>
+  <div class="ui container">
+    <div class="ui equal width grid">
+      <div class="row">
+      <div class="column">
+        <div class="ui segment">
+          <%= render partial: 'partials/profile_info' %>
+        </div>
+        <div class="ui segment">
+          <%= render partial: 'partials/standings' %>
+        </div>
+      </div>
+
+      <div class="nine wide column">
+        <div class="ui segment">
+          <%= render partial: 'partials/game_stats' %>
+        </div>
+        <div class="ui segment">
+          <%= render partial: 'partials/activity_feed' %>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="ui segment">
+          <%= render partial: 'partials/schedule' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
