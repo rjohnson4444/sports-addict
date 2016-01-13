@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'home#index', as: :login
-  get 'dashboard', to: 'home#show'
+  root 'home#index'
+  get 'dashboard',      to: 'home#show'
+  get '/auth/twitter',  as: :login
+  
   resources :teams, only: [:index, :show]
 end
