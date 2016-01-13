@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SportRadarServiceTest < ActiveSupport::TestCase
 
-  test "#users" do
+  test "#standings" do
     VCR.use_cassette("sport_radar_service#user") do
       favorite_team = "Denver Nuggets"
       standings = Standing.standings(favorite_team).first
