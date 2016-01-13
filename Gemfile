@@ -23,6 +23,7 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov'
   gem 'launchy'
+  gem 'hurley'
 end
 
 group :test do
