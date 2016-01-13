@@ -5,7 +5,11 @@
         <%= link_to "SportsAddict", root_path, class: "item", id: "nav-logo-second" %>
         <div class="right menu">
           <div class="item">
-            <a class="ui inverted blue button">Log in</a>
+            <% if current_user %>
+              <%= link_to "Logout", logout_path, class: "ui inverted blue button" %>
+            <% else %>
+              <%= link_to "Login", login_path, class: "ui inverted blue button" %>
+            <% end %>            
           </div>
         </div>
       </div>
@@ -13,7 +17,11 @@
 
     <!-- Sidebar Menu -->
     <div class="ui vertical inverted sidebar menu">
-      <%= link_to "Login", login_path, class: "item" %>
+      <% if current_user %>
+        <%= link_to "Logout", logout_path, class: "item" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "item" %>
+      <% end %>
     </div>
 
 
@@ -35,9 +43,12 @@
             Enjoy the game the <strong>Right</strong> way!
           </h2>
           <h2></h2>
-          <p><strong>Login</strong> with </p>
-          <%= link_to login_path, class: "ui huge twitter button" do %>
-            <i class="twitter icon"></i>Twitter
+          <% if current_user %>
+          <% else %>
+            <p><strong>Login</strong> with </p>
+            <%= link_to login_path, class: "ui huge twitter button" do %>
+              <i class="twitter icon"></i>Twitter
+            <% end %>
           <% end %>
         </div>
       </div>
