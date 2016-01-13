@@ -1,19 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  profile_image: MyString
-  description: MyString
-  uid: MyString
-  favorite_team: MyString
-  oauth_token: MyString
-  oauth_secret: MyString
+  name: Ryan Johnson
+  profile_image: http://abs.twimg.com/sticky/default_profile_images/default_profile_4_normal.png
+  description: This is my description
+  uid: "123456"
+  oauth_token: "fwefwe898wef987090wef9w707wef"
+  oauth_secret: "sfdf0907wef707w0e9f0w7e907f97we"
 
 two:
-  name: MyString
-  profile_image: MyString
-  description: MyString
-  uid: MyString
-  favorite_team: MyString
-  oauth_token: MyString
-  oauth_secret: MyString
+  name: Kayla Johnson
+  profile_image: "http://abs.twimg.com/sticky/default_profile_images/default_profile_4_normal.png"
+  description: This is kayla's description
+  uid: "124435"
+  oauth_token: "wef707wf70w9ef08w08f08w9ef80w"
+  oauth_secret: "wf09wf98w09f8w098f0w98f090wfwfo"
