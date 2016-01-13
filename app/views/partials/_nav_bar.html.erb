@@ -1,10 +1,10 @@
 <div class="ui large top menu">
   <div class="ui container">
-    <a class="item" id="nav-logo-second">SportsAddict</a>
+    <%= link_to "SportsAddict", dashboard_path, class: "item", id: "nav-logo-second" %>
     <div class="right menu">
-      <a class="ui item">Teams</a>            
-      <a class="ui item">Fans</a>
-      <a class="ui item">Logout</a>
+      <%= link_to "Teams", teams_path, class: "ui item" %>
+      <%= link_to "Fans", "#", class: "ui item" %>
+      <%= link_to "Logout", logout_path, class: "ui item" %>
     </div>
   </div>
 </div>

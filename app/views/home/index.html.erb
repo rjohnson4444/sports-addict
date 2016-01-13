@@ -2,10 +2,14 @@
   <body id="layout">
     <div class="ui large top fixed hidden menu">
       <div class="ui container">
-        <a class="item" id="nav-logo-second">SportsAddict</a>
+        <%= link_to "SportsAddict", root_path, class: "item", id: "nav-logo-second" %>
         <div class="right menu">
           <div class="item">
-            <a class="ui inverted blue button">Log in</a>
+            <% if current_user %>
+              <%= link_to "Logout", logout_path, class: "ui inverted blue button" %>
+            <% else %>
+              <%= link_to "Login", login_path, class: "ui inverted blue button" %>
+            <% end %>            
           </div>
         </div>
       </div>
@@ -13,7 +17,11 @@
 
     <!-- Sidebar Menu -->
     <div class="ui vertical inverted sidebar menu">
-      <a class="item">Login</a>
+      <% if current_user %>
+        <%= link_to "Logout", logout_path, class: "item" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "item" %>
+      <% end %>
     </div>
 
 
@@ -26,7 +34,7 @@
             <a class="toc item">
               <i class="sidebar icon"></i>
             </a>
-            <a class="item" id="nav-logo">SportsAddict</a>
+            <%= link_to "SportsAddict", root_path, class: "item", id: "nav-logo" %>
           </div>
         </div>
 
@@ -35,88 +43,30 @@
             Enjoy the game the <strong>Right</strong> way!
           </h2>
           <h2></h2>
-          <p><strong>Login</strong> with </p>
-          <div class="ui huge twitter button"> <i class="twitter icon"></i> Twitter</div>
+          <% if current_user %>
+          <% else %>
+            <p><strong>Login</strong> with </p>
+            <%= link_to login_path, class: "ui huge twitter button" do %>
+              <i class="twitter icon"></i>Twitter
+            <% end %>
+          <% end %>
         </div>
-
       </div>
 
-      <!-- <div class="ui vertical stripe segment">
-        <div class="ui middle aligned stackable grid container">
-          <div class="row">
-            <div class="eight wide column">
-              <h3 class="ui header">We Help Companies and Companions</h3>
-              <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-              <h3 class="ui header">We Make Bananas That Can Dance</h3>
-              <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
-            </div>
-            <div class="six wide right floated column">
-              <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
-            </div>
-          </div>
-          <div class="row">
-            <div class="center aligned column">
-              <a class="ui huge button">Check Them Out</a>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-
-      <!-- <div class="ui vertical stripe quote segment">
-        <div class="ui equal width stackable internally celled grid">
-          <div class="center aligned row">
-            <div class="column">
-              <h3>"What a Company"</h3>
-              <p>That is what they all say about us</p>
-            </div>
-            <div class="column">
-              <h3>"I shouldn't have gone with their competitor."</h3>
-              <p>
-                <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
       <div class="ui vertical stripe segment">
         <div class="ui text container">
           <h3 class="ui header">Real-Time Stats</h3>
           <p>Keep up with your favorite teams stats in real time, while you chat on your news feed with other fans!</p>
           <h4 class="ui horizontal header divider">
-            <a href="#">Stay in the Game</a>
+            Stay in the Game
           </h4>
           <h3 class="ui header">What team has the most support?</h3>
           <p>Follow your fellow fans to see what they have to say about the games. Or follow your rivals and talk as much trash as you want! Its all fun!</p>
         </div>
       </div>
 
-
-      <div class="ui inverted vertical footer segment">
-        <div class="ui container">
-          <div class="ui stackable inverted divided equal height stackable grid">
-            <div class="three wide column">
-              <h4 class="ui inverted header">About</h4>
-              <div class="ui inverted link list">
-                <a href="#" class="item">Contact Us</a>
-              </div>
-            </div>
-            <div class="three wide column">
-              <h4 class="ui inverted header">Services</h4>
-              <div class="ui inverted link list">
-                <a href="#" class="item">Sports Teams</a>
-                <a href="#" class="item">Event Venues</a>
-              </div>
-            </div>
-            <div class="seven wide column">
-              <h4 class="ui inverted header">SportsAddict</h4>
-              <p>&copy; 2015 All rights reserved</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render partial: 'partials/landing_footer' %>
     </div>
   </body>
-
 </html>

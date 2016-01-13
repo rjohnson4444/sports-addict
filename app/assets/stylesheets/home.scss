@@ -1,3 +1,87 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+      background: url(http://i.imgur.com/CvFSrVn.jpg) no-repeat fixed center !important;
+    }
+
+    .masthead h2.ui.header {
+      margin-top: 2.5em;
+      margin-bottom: 0em;
+      font-size: 3em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+
+    .footer.segment#normal {
+      margin-top: 2em;
+      padding: 1em;
+      background-color: white;
+    }
+
+    .footer.segment#landing {
+      padding: 5em 0em;
+      background: url(http://i.imgur.com/CvFSrVn.jpg) no-repeat fixed center !important;
+    }
+
+    #nav-logo {
+      font-size: 2em;
+      color: white !important;
+    }
+
+    #nav-logo-second {
+      font-size: 1.5em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    body {
+      background-color: #E9F1F8;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }

@@ -14,14 +14,21 @@ gem 'rails_12factor', group: :production
 gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
 gem 'figaro'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth-twitter'
 gem 'sprockets-rails', '~> 2.3'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'vcr'
 
 group :development, :test do
   gem 'pry'
+  gem 'capybara'
+  gem 'simplecov'
+  gem 'launchy'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'webmock'
+  gem 'minitest-emoji'
 end
 
 group :development do

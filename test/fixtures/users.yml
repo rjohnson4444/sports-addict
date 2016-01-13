@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  profile_image: MyString
+  description: MyString
+  uid: MyString
+  favorite_team: MyString
+  oauth_token: MyString
+  oauth_secret: MyString
+
+two:
+  name: MyString
+  profile_image: MyString
+  description: MyString
+  uid: MyString
+  favorite_team: MyString
+  oauth_token: MyString
+  oauth_secret: MyString

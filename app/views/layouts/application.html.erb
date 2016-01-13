@@ -9,7 +9,8 @@
 <body>
 
 <%= render partial: 'partials/nav_bar' unless current_page?('/') %>
-<%= yield %>
+  <%= yield %>
+<%= render partial: 'partials/footer' unless current_page?('/') %>
 
 </body>
 </html>
