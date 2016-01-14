@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113035500) do
+ActiveRecord::Schema.define(version: 20160114011702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conferences", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "divisions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "conference_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "divisions", ["conference_id"], name: "index_divisions_on_conference_id", using: :btree
+
+  create_table "favorite_teams", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.integer  "user_id"
+    t.integer  "division_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image"
+  end
+
+  add_index "favorite_teams", ["division_id"], name: "index_favorite_teams_on_division_id", using: :btree
+  add_index "favorite_teams", ["user_id"], name: "index_favorite_teams_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -28,4 +56,7 @@ ActiveRecord::Schema.define(version: 20160113035500) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "divisions", "conferences"
+  add_foreign_key "favorite_teams", "divisions"
+  add_foreign_key "favorite_teams", "users"
 end
