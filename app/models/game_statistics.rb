@@ -7,7 +7,6 @@ class GameStatistics
   def self.game_stats(favorite_team)
     raw_stats = service.favorite_team_game_stats
     game = today_game(raw_stats, favorite_team).first
-    binding.pry
   end
 
   private
