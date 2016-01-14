@@ -6,6 +6,8 @@ class HomeController < ApplicationController
     @user = current_user
     @standings = Standing.standings(favorite_team)
     @favorite_team_conference = FavoriteTeam.conference(favorite_team)
+    @today_game_stats = GameStatistics.game_stats(favorite_team)
+    @game_alert = GameStatistics.game_alert(favorite_team)
   end
 
   private
