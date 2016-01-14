@@ -9,6 +9,11 @@ class SportRadarService
     parse_json(connection.get("seasontd/2015/REG/standings.json" + api_key))
   end
 
+  def favorite_team_game_stats
+    date = Time.now
+    parse_json(connection.get("games/#{date.year}/#{date.month}/#{date.day}/schedule.json" + api_key))
+  end
+
 
   private
     def parse_json(response)

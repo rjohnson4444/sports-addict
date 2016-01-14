@@ -17,7 +17,7 @@ class Standing
   # end
 
   def self.standings(favorite_team)
-    all_standings = service.favorite_team_standings
+    all_standings ||= service.favorite_team_standings
     team_standings = parse_standings_response(all_standings, favorite_team)
     team_standings.map { |team| build(team) }
   end

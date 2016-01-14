@@ -18,6 +18,54 @@ class ActiveSupport::TestCase
     config.cassette_library_dir = "test/cassettes"
     config.hook_into :webmock
   end
+
+  def create_conference
+    Conference.create!(id: 2,
+                       name: "WESTERN CONFERENCE")
+  end
+
+  def create_division
+    create_conference
+
+    Division.create!(id: 5,
+                     name: "Northwest",
+                     conference_id: 2
+                     )
+  end
+
+  def make_favorite_teams
+    create_division
+
+    FavoriteTeam.create!(name: "Thunder",
+                         city: "Oklahoma City",
+                         division_id: 5,
+                         image: "thunder.gif"
+                         )
+
+    FavoriteTeam.create!(name: "Jazz",
+                         city: "Utah",
+                         division_id: 5,
+                         image: "jazz.gif"
+                         )
+
+    FavoriteTeam.create!(name: "Trail Blazers",
+                         city: "Portland",
+                         division_id: 5,
+                         image: "blazers.gif"
+                         )
+
+    FavoriteTeam.create!(name: "Nuggets",
+                         city: "Denver",
+                         division_id: 5,
+                         image: "nuggets.gif"
+                         )
+
+    FavoriteTeam.create!(name: "Timberwolves",
+                         city: "Minnesota",
+                         division_id: 5,
+                         image: "timberwolves.gif"
+                         )
+  end
 end
 
 class ActionDispatch::IntegrationTest
