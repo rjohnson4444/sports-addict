@@ -8,11 +8,11 @@
           <%= render partial: 'partials/dashboard_modal', locals: { user: @user } %>
         </div>
         <div class="ui segment">
-          <%= render partial: 'partials/standings', locals: { standings: @standings } %>
+          <%= render partial: 'partials/standings', locals: { standings: @standings, favorite_team_conference: @favorite_team_conference, team_image: @team_image } %>
         </div>
       </div>
 
-      <div class="eight wide column">
+      <div class="seven wide column">
         <div class="ui segment">
           <%= render partial: 'partials/game_stats' %>
         </div>

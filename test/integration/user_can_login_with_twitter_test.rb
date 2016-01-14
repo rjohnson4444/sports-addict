@@ -3,7 +3,7 @@ require 'test_helper'
 class UserCanLoginWithTwitterTest < ActionDispatch::IntegrationTest
   test "logged in" do
     VCR.use_cassette("login_user#user") do
-
+      make_favorite_teams
       login_user
 
       assert_equal 200, page.status_code

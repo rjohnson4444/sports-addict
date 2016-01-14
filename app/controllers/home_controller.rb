@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   def show
     @user = current_user
     @standings = Standing.standings(favorite_team)
+    @favorite_team_conference = FavoriteTeam.conference(favorite_team)
   end
 
   private

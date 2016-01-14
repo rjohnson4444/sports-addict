@@ -2,7 +2,7 @@
   <div class="content">
     <i class="header">Standings</i>
     <div class="meta">
-      Western Conference
+      <%= favorite_team_conference %>
     </div>
   </div>
   <div class="content">
@@ -16,7 +16,7 @@
         <tr>
           <td>
             <h4 class="ui image header">
-              <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+              <%= image_tag(standing.image) %>              
               <div class="content">
                 <%= standing.city %>
                 <div class="sub header"><%= standing.name %>
@@ -24,7 +24,7 @@
             </div>
           </h4></td>
           <td>
-            <%= standing.record %>            
+            <%= standing.record %>
           </td>
         </tr>
         <% end %>

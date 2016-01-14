@@ -3,6 +3,7 @@ require 'test_helper'
 class UserCanLogoutTest < ActionDispatch::IntegrationTest
   test "logged out" do
     VCR.use_cassette("logout_user#user") do
+      make_favorite_teams
       login_user
       click_link "Logout"
 
