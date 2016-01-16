@@ -20,7 +20,8 @@ class SportRadarServiceTest < ActiveSupport::TestCase
 
       favorite_team = "Nuggets"
 
-      game_stats = GameStat.game_stats(favorite_team)
+      game_stats = GameStat.game_alert_info(favorite_team)
+
     end
   end
 

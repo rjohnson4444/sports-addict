@@ -1,0 +1,28 @@
+<div class="ui card">
+  <div class="content">
+    <%= image_tag(favorite_team_info.image, class: "right floated mini ui image") %>
+    <% if game_alert.message.nil? %>
+      <div class="header">The <%= favorite_team_info.city %> <%= favorite_team_info.name %>  Play The <%= game_alert.opponent %> Today!</div>
+    <% else %>
+      <div class="header"><%= game_alert.message %></div>
+    <% end %>
+  </div>
+  <div class="content">
+    <% if game_alert.message.nil? %>
+      <h4 class="ui sub header">vs. <%= game_alert.opponent %></h4>
+    <% else %>
+      <div></div>
+    <% end %>
+    <div class="meta"> </div>
+    <div class="description">
+      <% if game_alert.message.nil? %>
+        <%= game_alert.venue_name %><br>
+        <%= game_alert.venue_address %><br>
+        <%= game_alert.venue_city %><br>
+        <%= game_alert.venue_state %><br>
+        <%= game_alert.venue_zipcode %><br>
+      <% else %>
+      <% end %>
+    </div>
+  </div>
+</div>

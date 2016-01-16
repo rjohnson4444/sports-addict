@@ -25,6 +25,9 @@
         <div class="ui segment">
           <%= render partial: 'partials/schedule' %>
         </div>
+        <div class="ui segment">
+          <%= render partial: 'partials/daily_game_alert', locals: { game_alert: @game_alert_info, favorite_team_info: @team_info } %>
+        </div>
       </div>
     </div>
   </div>

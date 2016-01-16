@@ -1,5 +1,6 @@
 <html>
   <body id="layout">
+    <% cache("landing-page") do %>
     <div class="ui large top fixed hidden menu">
       <div class="ui container">
         <%= link_to "SportsAddict", root_path, class: "item", id: "nav-logo-second" %>
@@ -69,5 +70,6 @@
 
       <%= render partial: 'partials/landing_footer' %>
     </div>
+    <% end %>
   </body>
 </html>

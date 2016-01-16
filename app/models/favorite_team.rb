@@ -9,6 +9,10 @@ class FavoriteTeam < ActiveRecord::Base
     format_conference_name(conference_name)
   end
 
+  def self.favorite_team_info(favorite_team)
+    find_by(name: favorite_team)
+  end
+
   private
 
     def self.find_team_name(favorite_team)
