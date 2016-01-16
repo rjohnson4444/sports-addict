@@ -7,6 +7,7 @@ one:
   uid: "123456"
   oauth_token: "fwefwe898wef987090wef9w707wef"
   oauth_secret: "sfdf0907wef707w0e9f0w7e907f97we"
+  favorite_team_id: 1
 
 two:
   name: Kayla Johnson
@@ -15,3 +16,4 @@ two:
   uid: "124435"
   oauth_token: "wef707wf70w9ef08w08f08w9ef80w"
   oauth_secret: "wf09wf98w09f8w098f0w98f090wfwfo"
+  favorite_team_id: 2

@@ -1,5 +1,5 @@
 class FavoriteTeam < ActiveRecord::Base
-  belongs_to :user
+  has_many :users
   belongs_to :division
 
 

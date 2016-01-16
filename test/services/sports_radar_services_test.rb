@@ -10,7 +10,7 @@ class SportRadarServiceTest < ActiveSupport::TestCase
 
       assert_equal "Oklahoma City", standings.city
       assert_equal "Thunder",       standings.name
-      assert_equal "28-12",         standings.record
+      assert_equal "29-12",         standings.record
     end
   end
 

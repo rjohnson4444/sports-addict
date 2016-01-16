@@ -11,6 +11,6 @@ class HomeController < ApplicationController
   private
 
     def favorite_team
-      current_user.favorite_team
+      current_user.favorite_team.name
     end
 end

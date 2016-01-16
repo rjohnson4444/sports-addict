@@ -102,7 +102,8 @@ def make_favorite_teams
                        image: "blazers.gif"
                        )
 
-  FavoriteTeam.create!(name: "Nuggets",
+  FavoriteTeam.create!(id: 21,
+                       name: "Nuggets",
                        city: "Denver",
                        division_id: 5,
                        image: "nuggets.gif"

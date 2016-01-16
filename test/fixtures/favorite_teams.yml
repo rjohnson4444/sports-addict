@@ -3,11 +3,9 @@
 one:
   name: MyString
   city: MyString
-  user_id: 
-  division_id: 
+  division_id:
 
 two:
   name: MyString
   city: MyString
-  user_id: 
-  division_id: 
+  division_id:
