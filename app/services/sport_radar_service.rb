@@ -10,6 +10,7 @@ class SportRadarService
   end
 
   def favorite_team_stats
+    # user 14th for the day for testing
     date = Time.now
     parse_json(connection.get("games/#{date.year}/#{date.month}/#{date.day}/schedule.json" + api_key))
   end

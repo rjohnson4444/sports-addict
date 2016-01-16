@@ -34,13 +34,11 @@ class Standing
     end
 
     def self.find_conference(favorite_team)
-      name = format_team_name(favorite_team)
-      FavoriteTeam.find_by(name: name).division.conference.name
+      FavoriteTeam.find_by(name: favorite_team).division.conference.name
     end
 
     def self.find_division(favorite_team)
-      name = format_team_name(favorite_team)
-      FavoriteTeam.find_by(name: name).division.name
+      FavoriteTeam.find_by(name: favorite_team).division.name
     end
 
     def self.format_team_name(favorite_team)

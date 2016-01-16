@@ -35,18 +35,20 @@ class GameStat
                              venue_address,
                              venue_city,
                              venue_state,
-                             venue_zipcode
+                             venue_zipcode,
+                             broadcast_name
                              ) )
     end
 
-    def self.format_daily_game_info(opponent, venue_name, venue_address, venue_city, venue_state, venue_zipcode)
+    def self.format_daily_game_info(opponent, venue_name, venue_address, venue_city, venue_state, venue_zipcode, broadcast_name)
       {
         opponent: opponent,
         venue_name: venue_name,
         venue_address: venue_address,
         venue_city: venue_city,
         venue_state: venue_state,
-        venue_zipcode: venue_zipcode
+        venue_zipcode: venue_zipcode,
+        broadcast: broadcast_name
       }
     end
 
@@ -71,7 +73,21 @@ class GameStat
     end
 
     def self.find_favorite_team_game(game, favorite_team)
-      game[:home][:name].split(" ").last == favorite_team || game[:home][:name].split(" ").last == favorite_team
+      return game[:home][:name]
+              .split(" ")
+              .last(2)
+              .join(" ") == favorite_team ||
+             game[:away][:name]
+              .split(" ")
+              .last(2)
+              .join(" ") if favorite_team == "Trail Blazers"
+
+      game[:home][:name]
+        .split(" ")
+        .last == favorite_team ||
+      game[:away][:name]
+        .split(" ")
+        .last == favorite_team
     end
 
     def self.build(data)

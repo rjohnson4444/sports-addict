@@ -9,7 +9,6 @@ class HomeController < ApplicationController
     @team_info = FavoriteTeam.favorite_team_info(favorite_team)
     sleep(0.5)
     @game_alert_info = GameStat.game_alert_info(favorite_team)
-    binding.pry
   end
 
   private

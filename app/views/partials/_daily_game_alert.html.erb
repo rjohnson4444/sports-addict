@@ -16,11 +16,10 @@
     <div class="meta"> </div>
     <div class="description">
       <% if game_alert.message.nil? %>
-        <%= game_alert.venue_name %><br>
+        <strong><%= game_alert.venue_name %></strong><br><br>
         <%= game_alert.venue_address %><br>
-        <%= game_alert.venue_city %><br>
-        <%= game_alert.venue_state %><br>
-        <%= game_alert.venue_zipcode %><br>
+        <%= game_alert.venue_city %>, <%= game_alert.venue_state %> <%= game_alert.venue_zipcode %><br><br>
+        Seen on: <strong><%= game_alert.broadcast %></strong> broadcast
       <% else %>
       <% end %>
     </div>

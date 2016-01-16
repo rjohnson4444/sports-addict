@@ -4,8 +4,8 @@ class FavoriteTeam < ActiveRecord::Base
 
 
   def self.conference(favorite_team)
-    team_name = find_team_name(favorite_team)
-    conference_name = find_by(name: team_name).division.conference.name
+    # team_name = find_team_name(favorite_team)
+    conference_name = find_by(name: favorite_team).division.conference.name
     format_conference_name(conference_name)
   end
 
