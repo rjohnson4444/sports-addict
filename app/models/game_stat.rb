@@ -21,7 +21,7 @@ class GameStat
 
   private
     def self.get_daily_game_info(favorite_team_game, favorite_team)
-      return favorite_team if favorite_team_game.first.nil?
+      return build(if_no_game?(favorite_team)) if favorite_team_game.first.nil?
 
       opponent   = find_opponent(favorite_team_game, favorite_team)
       venue_name = favorite_team_game.first[:venue][:name]
