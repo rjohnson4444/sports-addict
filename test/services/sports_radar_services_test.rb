@@ -14,6 +14,16 @@ class SportRadarServiceTest < ActiveSupport::TestCase
     end
   end
 
+  test "game_stats returns stats for favorite teams daily game" do
+    VCR.use_cassette("#game_stats") do
+      make_favorite_teams
+
+      favorite_team = "Nuggets"
+
+      game_stats = GameStat.game_stats(favorite_team)
+    end
+  end
+
   test "formating conference name" do
     conference_name = "EASTERN CONFERENCE"
 
