@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="main">
 
 <%= render partial: 'partials/nav_bar' unless current_page?('/') %>
   <%= yield %>

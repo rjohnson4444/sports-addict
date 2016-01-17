@@ -36,13 +36,19 @@
 
     .footer.segment#normal {
       margin-top: 2em;
+      height: 100px;
       padding: 1em;
       background-color: white;
+
     }
 
     .footer.segment#landing {
       padding: 5em 0em;
       background: url(http://i.imgur.com/CvFSrVn.jpg) no-repeat fixed center !important;
+    }
+
+    #team-layout {
+      min-height: 100%;
     }
 
     #nav-logo {
@@ -52,6 +58,10 @@
 
     #nav-logo-second {
       font-size: 1.5em;
+    }
+
+    html, body {
+      height: 100%;
     }
 
     .secondary.pointing.menu .toc.item {

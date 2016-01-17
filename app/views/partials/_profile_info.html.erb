@@ -6,7 +6,7 @@
   <div class="content">
     <a class="header"><%= user.name %></a>
   <div class="meta">
-    <span class="date"><%= user.favorite_team %></span>
+    <span class="date"><%= user.favorite_team.city %> <%= user.favorite_team.name %></span>
   </div>
   <div class="description">
     <%= user.description %>

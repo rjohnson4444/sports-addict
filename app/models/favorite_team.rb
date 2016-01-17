@@ -1,12 +1,16 @@
 class FavoriteTeam < ActiveRecord::Base
-  belongs_to :user
+  has_many :users
   belongs_to :division
 
 
   def self.conference(favorite_team)
-    team_name = find_team_name(favorite_team)
-    conference_name = find_by(name: team_name).division.conference.name
+    # team_name = find_team_name(favorite_team)
+    conference_name = find_by(name: favorite_team).division.conference.name
     format_conference_name(conference_name)
+  end
+
+  def self.favorite_team_info(favorite_team)
+    find_by(name: favorite_team)
   end
 
   private

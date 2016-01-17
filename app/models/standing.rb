@@ -4,20 +4,12 @@ class Standing
     SportRadarService.new
   end
 
-  # def self.standings(favorite_team)
-  #   all_standing = service.favorite_team_standings(favorite_team)
-  #   team_standings =  all_standing[:conferences]
-  #                       .select { |conference| conference[:name] == "EASTERN CONFERENCE" }
-  #                       .first[:divisions]
-  #                       .select { |division| division[:name] == "Central" }
-  #                       .first[:teams]
-  #                       .select { |team| team[:market] == "Cleveland" }
-  #                       .first
-  #   build(team_standings)
-  # end
+  def self.get_all_standings
+    @get_all_standings ||= service.favorite_team_standings
+  end
 
   def self.standings(favorite_team)
-    all_standings = service.favorite_team_standings
+    all_standings = get_all_standings
     team_standings = parse_standings_response(all_standings, favorite_team)
     team_standings.map { |team| build(team) }
   end
@@ -42,13 +34,11 @@ class Standing
     end
 
     def self.find_conference(favorite_team)
-      name = format_team_name(favorite_team)
-      FavoriteTeam.find_by(name: name).division.conference.name
+      FavoriteTeam.find_by(name: favorite_team).division.conference.name
     end
 
     def self.find_division(favorite_team)
-      name = format_team_name(favorite_team)
-      FavoriteTeam.find_by(name: name).division.name
+      FavoriteTeam.find_by(name: favorite_team).division.name
     end
 
     def self.format_team_name(favorite_team)
