@@ -33,8 +33,8 @@ class GameStat
     end
 
     def self.all_scores_by_quarters(game_stats)
-      if game_stats.nil?
-        no_game_today_message
+      if game_stats.nil? || game_stats[:status] == "scheduled"
+        game_stats_not_available
       else
         home_team_name             = game_stats[:home][:market]
         home_team_stats_by_quarter = format_stats_by_quarter(game_stats[:home][:scoring])
@@ -86,7 +86,7 @@ class GameStat
       stats.map { |quarter| build(quarter) }
     end
 
-    def self.no_game_today_message
+    def self.game_stats_not_available
       {
         no_game_message: "No game stats available."
       }
