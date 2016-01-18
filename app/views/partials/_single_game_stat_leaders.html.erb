@@ -1,32 +1,36 @@
 <table class="ui definition table">
+  <% if all_game_stats.home_team_name.nil? %>
+    <strong><%= all_game_stats.no_game_message %></strong>
+  <% else %>
   <thead>
     <tr><th></th>
-    <th>DEN</th>
+    <th><%= all_game_stats.home_team_name %></th>
     <th></th>
-    <th>UTAH</th>
+    <th><%= all_game_stats.away_team_name %></th>
     <th></th>
   </tr></thead>
   <tbody>
     <tr>
       <td>PTS</td>
-      <td>Emmanuel Mudiay</td>
-      <td>26</td>
-      <td>Trey Burke</td>
-      <td>31</td>
+      <td><%= all_game_stats.home_team_stats_leaders.points_leader_name %></td>
+      <td><%= all_game_stats.home_team_stats_leaders.points %></td>
+      <td><%= all_game_stats.away_team_stats_leaders.points_leader_name %></td>
+      <td><%= all_game_stats.away_team_stats_leaders.points %></td>
     </tr>
     <tr>
       <td>REB</td>
-      <td>Kenneth Faried</td>
-      <td>12</td>
-      <td>Derrick Favors</td>
-      <td>10</td>
+      <td><%= all_game_stats.home_team_stats_leaders.rebounds_leader_name %></td>
+      <td><%= all_game_stats.home_team_stats_leaders.rebounds %></td>
+      <td><%= all_game_stats.away_team_stats_leaders.rebounds_leader_name %></td>
+      <td><%= all_game_stats.away_team_stats_leaders.rebounds %></td>
     </tr>
     <tr>
       <td>AST</td>
-      <td>Emmanuel Mudiay</td>
-      <td>9</td>
-      <td>Rodney Hood</td>
-      <td>7</td>
+      <td><%= all_game_stats.home_team_stats_leaders.assists_leader_name %></td>
+      <td><%= all_game_stats.home_team_stats_leaders.assists %></td>
+      <td><%= all_game_stats.away_team_stats_leaders.assists_leader_name %></td>
+      <td><%= all_game_stats.away_team_stats_leaders.assists %></td>
     </tr>
   </tbody>
+  <% end %>
 </table>

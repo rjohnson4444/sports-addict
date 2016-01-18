@@ -3,10 +3,9 @@ class FavoriteTeam < ActiveRecord::Base
   belongs_to :division
 
 
-  def self.conference(favorite_team)
-    # team_name = find_team_name(favorite_team)
-    conference_name = find_by(name: favorite_team).division.conference.name
-    format_conference_name(conference_name)
+  def self.division(favorite_team)
+    division_name = find_by(name: favorite_team).division.name
+    format_division_name(division_name)
   end
 
   def self.favorite_team_info(favorite_team)
@@ -19,7 +18,7 @@ class FavoriteTeam < ActiveRecord::Base
       favorite_team.split(" ").last
     end
 
-    def self.format_conference_name(name)
+    def self.format_division_name(name)
       name.split(" ").map { |name| name.capitalize }.join(" ")
     end
 end

@@ -21,7 +21,17 @@ class SportRadarServiceTest < ActiveSupport::TestCase
       favorite_team = "Nuggets"
 
       game_stats = GameStat.game_alert_info(favorite_team)
+    end
+  end
 
+  test "scores_by_quarter returns score for each team by quarter" do
+    VCR.use_cassette("gamestat#scores_by_quarter") do
+      make_favorite_teams
+
+      favorite_team = "Nuggets"
+
+      scores_by_quarter = GameStat.scores_by_quarter(favorite_team)
+      binding.pry
     end
   end
 
