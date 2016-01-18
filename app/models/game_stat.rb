@@ -72,7 +72,7 @@ class GameStat
 
     def self.format_stat_leaders(name, game_stats)
       {
-        team_name: name,
+        team_name:            name,
         points_leader_name:   game_stats[:points].first[:full_name],
         points:               game_stats[:points].first[:statistics][:points],
         rebounds_leader_name: game_stats[:rebounds].first[:full_name],
