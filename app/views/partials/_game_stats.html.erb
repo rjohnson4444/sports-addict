@@ -2,10 +2,10 @@
   <i class="trophy icon"></i>
   Game Summary
 </h4>
-  <%= render partial: 'partials/single_game_summary', locals: { single_game_summary: @single_game_summary } %>
+  <%= render partial: 'partials/single_game_summary', locals: { all_game_stats: @all_game_stats } %>
 
 <h4 class="ui horizontal divider header">
   <i class="bar chart icon"></i>
   Stat Leaders
 </h4>
-  <%= render partial: 'partials/single_game_stat_leaders' %>
+  <%= render partial: 'partials/single_game_stat_leaders', locals: { all_game_stats: @all_game_stats } %>
