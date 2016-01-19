@@ -2,10 +2,17 @@
   <thead>
     <tr>
       <th></th>
+      <% if all_game_stats.home_team_stats_by_quarter.nil? %>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th>Q4</th>
+      <% else %>
       <% all_game_stats.home_team_stats_by_quarter.each do |quarter| %>
         <th>Q<%= quarter.number %></th>
       <% end %>
-      <th>Final</th>
+        <th>Final</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>

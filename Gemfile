@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'omniauth-twitter'
 gem 'sprockets-rails', '~> 2.3'
 gem 'vcr'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'pry'

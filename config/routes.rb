@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/auth/twitter/callback',  to: 'sessions#create'
 
   resources :teams, only: [:index, :show]
+  resources :posts, only: [:create, :destroy]
 end

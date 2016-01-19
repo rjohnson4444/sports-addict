@@ -1,0 +1,9 @@
+<div class="ui form">
+  <div class="field">
+    <%= form_for(Post.new, url: posts_path(@post)) do |f| %>
+      <%= f.label :post %>
+      <%= f.text_area :message, rows: 2 %>
+    </div>
+      <%= f.submit "Post It", class: "ui right floated blue button" %>
+    <% end %>
+</div>

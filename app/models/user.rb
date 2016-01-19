@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :favorite_team
+  has_many :posts
 
   def self.from_twitter_omniauth(oauth_info)
     user = where(uid: oauth_info.uid).first_or_create

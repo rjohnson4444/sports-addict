@@ -106,6 +106,7 @@ class GameStat
       venue_state    = favorite_team_game.first[:venue][:state]
       venue_zipcode  = favorite_team_game.first[:venue][:zip]
       broadcast_name = favorite_team_game.first[:broadcast][:network]
+      time_of_game   = format_time(favorite_team_game.first[:scheduled])
 
       build( format_daily_game_info( opponent,
                              venue_name,
@@ -113,11 +114,16 @@ class GameStat
                              venue_city,
                              venue_state,
                              venue_zipcode,
-                             broadcast_name
+                             broadcast_name,
+                             time_of_game
                              ) )
     end
 
-    def self.format_daily_game_info(opponent, venue_name, venue_address, venue_city, venue_state, venue_zipcode, broadcast_name)
+    def self.format_time(time)
+      Time.zone.parse(time).to_time.strftime("%l %p")
+    end
+
+    def self.format_daily_game_info(opponent, venue_name, venue_address, venue_city, venue_state, venue_zipcode, broadcast_name, time_of_game)
       {
         opponent:      opponent,
         venue_name:    venue_name,
@@ -125,7 +131,8 @@ class GameStat
         venue_city:    venue_city,
         venue_state:   venue_state,
         venue_zipcode: venue_zipcode,
-        broadcast:     broadcast_name
+        broadcast:     broadcast_name,
+        time_of_game:  time_of_game
       }
     end
 

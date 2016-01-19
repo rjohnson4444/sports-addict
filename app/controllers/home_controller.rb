@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     sleep(0.5)
     @game_alert_info          = GameStat.game_alert_info(favorite_team)
     sleep(0.5)
-    @all_game_stats            = GameStat.all_game_stats(favorite_team)
+    @all_game_stats           = GameStat.all_game_stats(favorite_team)
   end
 
   private
