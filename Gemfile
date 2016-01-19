@@ -18,13 +18,13 @@ gem 'omniauth-twitter'
 gem 'sprockets-rails', '~> 2.3'
 gem 'vcr'
 gem 'newrelic_rpm'
+gem 'hurley'
 
 group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'simplecov'
   gem 'launchy'
-  gem 'hurley'
 end
 
 group :test do
