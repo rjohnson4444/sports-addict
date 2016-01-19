@@ -105,6 +105,7 @@ GEM
     minitest (5.8.3)
     minitest-emoji (2.0.0)
     multi_json (1.11.2)
+    newrelic_rpm (3.14.1.311)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     oauth (0.4.7)
@@ -224,6 +225,7 @@ DEPENDENCIES
   launchy
   less-rails-semantic_ui
   minitest-emoji
+  newrelic_rpm
   omniauth-twitter
   pg
   pry
