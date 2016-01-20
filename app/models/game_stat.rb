@@ -36,7 +36,6 @@ class GameStat
     end
 
     def self.all_scores_by_quarters(game_stats)
-      binding.pry
       if game_stats.nil?
         game_stats_not_available
       elsif game_stats[:status] == "scheduled" || game_stats[:home][:scoring].empty?
