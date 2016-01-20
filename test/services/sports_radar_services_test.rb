@@ -31,7 +31,6 @@ class SportRadarServiceTest < ActiveSupport::TestCase
       favorite_team = "Nuggets"
 
       scores_by_quarter = GameStat.scores_by_quarter(favorite_team)
-      binding.pry
     end
   end
 

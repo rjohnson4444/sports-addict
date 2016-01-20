@@ -18,7 +18,7 @@
           <%= render partial: 'partials/game_stats', locals: { all_game_stats: @all_game_stats } %>
         </div>
         <div class="ui segment">
-          <%= render partial: 'partials/activity_feed' %>
+          <%= render partial: 'partials/activity_feed', locals: { activities: @activities } %>
         </div>
       </div>
 

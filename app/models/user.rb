@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   belongs_to :favorite_team
   has_many :posts
+  has_many :follows
+
+  def followed_by(user = nil)
+    user.follows.find_by(target_id: id)
+  end
 
   def self.from_twitter_omniauth(oauth_info)
     user = where(uid: oauth_info.uid).first_or_create
@@ -13,5 +18,4 @@ class User < ActiveRecord::Base
     )
     user
   end
-
 end

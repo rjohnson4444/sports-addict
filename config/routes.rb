@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :teams, only: [:index, :show]
   resources :posts, only: [:create, :destroy]
+  resources :follows, only: [:create, :destroy]
 end

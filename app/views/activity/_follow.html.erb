@@ -1,0 +1,18 @@
+<div class="event">
+  <div class="label">
+    <%= image_tag(activity['actor']['profile_image']) %>
+    <!-- <img src="/images/avatar/small/jenny.jpg"> -->
+  </div>
+  <div class="content">
+    <div class="summary">
+      <!-- <a class="user"> -->
+        <strong><%= activity['actor'].name %></strong>
+        <!-- Jenny Hess -->
+      is folllowing <strong><%= activity['object'].name %></strong>
+      <div class="date">
+        <%= time_ago_in_words(activity['time']) %> ago
+        <!-- 2 Days Ago -->
+      </div>
+    </div>
+  </div>
+</div>

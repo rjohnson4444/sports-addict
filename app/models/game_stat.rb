@@ -33,7 +33,7 @@ class GameStat
     end
 
     def self.all_scores_by_quarters(game_stats)
-      if game_stats.nil? || game_stats[:status] == "scheduled"
+      if game_stats.nil? || game_stats[:status] == "scheduled" || game_stats[:home][:scoring].empty?
         game_stats_not_available
       else
         home_team_name             = game_stats[:home][:market]
