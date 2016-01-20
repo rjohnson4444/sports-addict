@@ -14,3 +14,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+ html, body {
+   height: 100%;
+ }
+
+ .footer.segment#normal {
+   margin-top: 2em;
+   height: 100px;
+   padding: 1em;
+   background-color: white;
+ }

@@ -1,34 +1,36 @@
 <div class="ui card">
-  <div class="content">
-    <i class="header">Standings</i>
-    <div class="meta">
-      <%= favorite_team_division %> Division
+  <%# cache cache_per_day do %>
+    <div class="content">
+      <i class="header">Standings</i>
+      <div class="meta">
+        <%= favorite_team_division %> Division
+      </div>
     </div>
-  </div>
-  <div class="content">
-    <table class="ui very basic collapsing celled table">
-      <thead>
-        <tr><th>Teams</th>
-        <th>W-L</th>
-      </tr></thead>
-      <tbody>
-        <% standings.each do |standing| %>
-        <tr>
-          <td>
-            <h4 class="ui image header">
-              <%= image_tag(standing.image) %>
-              <div class="content">
-                <%= standing.city %>
-                <div class="sub header"><%= standing.name %>
+    <div class="content">
+      <table class="ui very basic collapsing celled table">
+        <thead>
+          <tr><th>Teams</th>
+          <th>W-L</th>
+        </tr></thead>
+        <tbody>
+          <% standings.each do |standing| %>
+          <tr>
+            <td>
+              <h4 class="ui image header">
+                <%= image_tag(standing.image) %>
+                <div class="content">
+                  <%= standing.city %>
+                  <div class="sub header"><%= standing.name %>
+                </div>
               </div>
-            </div>
-          </h4></td>
-          <td>
-            <%= standing.record %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+            </h4></td>
+            <td>
+              <%= standing.record %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <%# end %>
 </div>
