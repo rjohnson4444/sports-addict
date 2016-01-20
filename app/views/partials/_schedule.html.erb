@@ -1,20 +1,29 @@
 <h4 class="ui horizontal divider header">
   <i class="calendar icon"></i>
-  Today's Schedule
+  NBA Schedule 
 </h4>
 <h5><%= today_game_schedule[:date] %></h5>
 <div class="ui relaxed divided list"><br>
+  <div class="ui grid">
   <% today_game_schedule[:games].each do |game| %>
-  <div class="item">
-    <div class="content"><br>
-      <div class="header"><%= game[:away_team] %> @ <%= game[:home_team] %></div>
-      <div class="meta">
-        <span class="stay"><%= game[:time] %></span>
-      </div><br>
-      <div class="description">
-        <p>Seen on: <%= game[:broadcast] %></p>
+  <div class="seven wide column">
+    <div class="column">
+      <div class="ui segment">
+
+    <div class="item">
+      <div class="content"><br>
+        <div class="header"><%= game[:away_team] %> @ <%= game[:home_team] %></div>
+        <div class="meta">
+          <span class="stay"><%= game[:time] %></span>
+        </div><br>
+        <div class="description">
+          <p>Seen on: <%= game[:broadcast] %></p>
+        </div>
       </div>
-    </div>
-  </div><br>
-  <% end %>
+    </div><br>
+  </div>
+  </div>
+  </div>
+    <% end %>
+  </div>
 </div>

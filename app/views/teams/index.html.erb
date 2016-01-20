@@ -22,14 +22,14 @@
               <tr>
                 <td>
                   <% team.users.each do |user| %>
-                  <%= link_to "#{user.name}", "#" %>
+                  <span><%= link_to "#{user.name}", "#" %>
                     <% if user.followed_by(current_user) %>
                       <%= link_to "Unfollow", follow_path(user.followed_by(current_user)), method: :delete, class: "ui mini right floated basic blue button" %>
                     <% else %>
                       <%= form_for :follow, url: follows_path do |f| %>
-                        <%= f.hidden_field :target_id, value: user.id %>
-                        <input class="ui mini right floated basic blue button" type="submit" value="Follow">
-                      <% end %>
+                              <%= f.hidden_field :target_id, value: user.id %>
+                              <input class="ui mini right floated basic blue button" type="submit" value="Follow">
+                            <% end %></span>
                     <% end %>
                   <% end %>
                 </td><br>
