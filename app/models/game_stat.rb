@@ -40,7 +40,7 @@ class GameStat
         game_stats_not_available
       elsif game_stats[:status] == "scheduled"
         game_stats_pending(game_stats)
-      elsif game_stats[:home][:scoring].empty
+      elsif game_stats[:home][:scoring].empty?
         game_stats_not_available
       else
         home_team_name             = game_stats[:home][:market]
