@@ -1,0 +1,30 @@
+<body><br><br><br><br><br>
+  <div class="ui container">
+    <div class="ui equal width grid">
+      <div class="row">
+        <div class="column"></div>
+        <div class="ten wide column">
+          <div class="ui segment">
+            <h1>Edit Profile</h1>
+            <div class="ui container">
+              <div class="ui form">
+                <div class="field">
+                  <%= form_for(User.new, url: home_path(current_user.id), :html => { method: :patch }) do |f| %>
+                  <%= f.label "Favorite Team" %><br>
+                  <%= f.collection_select :favorite_team, FavoriteTeam.all, :id, :name, { prompt: "Choose a favorite team" }, { id: "select"} %><br><br>
+                  <%= f.label :profile_description %>
+                  <%= f.text_area :description, rows: 2 %><br><br>
+                  <%= f.submit "Update Profile", class: "ui button" %>
+                  <% end %>
+                  <div class="actions">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,5 +1,5 @@
 <div class="ui card">
-  <%= cache cache_per_day do %>
+  <%#= cache cache_per_day do %>
     <div class="content">
       <%= image_tag(favorite_team_info.image, class: "right floated mini ui image") %>
       <% if game_alert.message.nil? %>
@@ -25,5 +25,5 @@
         <% end %>
       </div>
     </div>
-  <% end %>
+  <%# end %>
 </div>

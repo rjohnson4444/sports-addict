@@ -7,10 +7,10 @@
 </head>
 <body id="main">
 
-<%= render partial: 'partials/nav_bar' unless current_page?('/') %>
-  <%= yield %>
-<%= render partial: 'partials/footer' unless current_page?('/') %>
+  <%= render partial: 'partials/nav_bar' unless current_page?('/') %>
+    <%= yield %>
+  <%= render partial: 'partials/footer' unless current_page?('/') || current_page?(controller: 'users', action: 'edit') %>
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

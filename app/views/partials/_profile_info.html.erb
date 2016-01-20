@@ -12,6 +12,6 @@
       <%= user.description %>
     </div>
     </div>
-    <%= link_to "Edit Profile", "#", class: "ui right floated blue button" %>
+    <%= link_to "Edit Profile", edit_user_path(current_user.id), class: "ui right floated blue button" %>
   <% end %>
 </div>

@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
       profile_image: oauth_info.info.image,
       oauth_token: oauth_info.credentials.token,
       oauth_secret: oauth_info.credentials.secret,
-      favorite_team_id: 21
     )
     user
   end

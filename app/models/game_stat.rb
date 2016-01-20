@@ -10,8 +10,11 @@ class GameStat
 
   def self.game_alert_info(favorite_team)
     favorite_team_game = daily_games(favorite_team)
-
     get_daily_game_info(favorite_team_game, favorite_team)
+  end
+
+  def self.scheduled_games_today
+    games_today(all_todays_game_info)
   end
 
   private
@@ -33,7 +36,11 @@ class GameStat
     end
 
     def self.all_scores_by_quarters(game_stats)
-      if game_stats.nil? || game_stats[:status] == "scheduled" || game_stats[:home][:scoring].empty?
+      if game_stats.nil?
+        game_stats_not_available
+      elsif game_stats[:status] == "scheduled"
+        game_stats_pending(game_stats)
+      elsif game_stats[:home][:scoring].empty
         game_stats_not_available
       else
         home_team_name             = game_stats[:home][:market]
@@ -86,9 +93,44 @@ class GameStat
       stats.map { |quarter| build(quarter) }
     end
 
+    def self.games_today(daily_games)
+      date               = daily_games[:date].to_time.strftime("%A, %b %d")
+      games_for_the_day  = get_games_for_the_day(daily_games)
+
+      format_scheduled_games_today(date, games_for_the_day)
+    end
+
+    def self.format_scheduled_games_today(date, games)
+      {
+        date: date,
+        games: games
+      }
+    end
+
+    def self.get_games_for_the_day(daily_games)
+      daily_games[:games].map { |game| format_games_today(game) }
+    end
+
+    def self.format_games_today(game)
+      {
+        home_team: game[:home][:alias],
+        away_team: game[:away][:alias],
+        broadcast: game[:broadcast][:network],
+        time:      Time.zone.parse(game[:scheduled]).to_time.strftime("%l %p")
+      }
+    end
+
     def self.game_stats_not_available
       {
         no_game_message: "No game stats available."
+      }
+    end
+
+    def self.game_stats_pending(game_stats)
+      time = game_stats[:scheduled].to_time.strftime("%l %p")
+
+      {
+        no_game_message: "Today's game starts at#{time}"
       }
     end
 

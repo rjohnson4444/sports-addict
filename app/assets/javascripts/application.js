@@ -21,6 +21,7 @@ $(document).ready(function() {
       navBarShow();
       // create sidebar and attach to menu open
       sideBar();
+      modal();
     });
 
 function navBarShow(){
@@ -34,6 +35,11 @@ function navBarShow(){
         $('.fixed.menu').transition('fade out');
       }
     });
+}
+
+function modal() {
+  $('.ui.modal').modal('show');
+  $('#select').dropdown();
 }
 
 function sideBar() {

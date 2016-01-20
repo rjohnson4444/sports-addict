@@ -1,6 +1,5 @@
 class FollowsController < ApplicationController
   def create
-    binding.pry
     follow = Follow.new(follow_params)
     follow.user = current_user
     if follow.save

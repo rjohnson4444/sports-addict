@@ -1,52 +1,20 @@
 <h4 class="ui horizontal divider header">
   <i class="calendar icon"></i>
-  Schedule
+  Today's Schedule
 </h4>
-
-<div class="ui items">
+<h5><%= today_game_schedule[:date] %></h5>
+<div class="ui relaxed divided list"><br>
+  <% today_game_schedule[:games].each do |game| %>
   <div class="item">
-    <div class="ui tiny image">
-      <!-- <img src="/images/wireframe/image.png"> -->
-    </div>
-    <div class="content">
-      <div class="header">@CHI</div>
+    <div class="content"><br>
+      <div class="header"><%= game[:away_team] %> @ <%= game[:home_team] %></div>
       <div class="meta">
-        <span class="price">1/24/16</span>
-        <span class="stay">7pm</span>
-      </div>
+        <span class="stay"><%= game[:time] %></span>
+      </div><br>
       <div class="description">
-        <p></p>
+        <p>Seen on: <%= game[:broadcast] %></p>
       </div>
     </div>
-  </div>
-  <div class="item">
-    <div class="ui tiny image">
-      <!-- <img src="/images/wireframe/image.png"> -->
-    </div>
-    <div class="content">
-      <div class="header">LAL</div>
-      <div class="meta">
-        <span class="price">1/31/16</span>
-        <span class="stay">8pm</span>
-      </div>
-      <div class="description">
-        <p></p>
-      </div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="ui tiny image">
-      <!-- <img src="/images/wireframe/image.png"> -->
-    </div>
-    <div class="content">
-      <div class="header">@TOR</div>
-      <div class="meta">
-        <span class="price">2/2/16</span>
-        <span class="stay">7pm</span>
-      </div>
-      <div class="description">
-        <p></p>
-      </div>
-    </div>
-  </div>
+  </div><br>
+  <% end %>
 </div>
