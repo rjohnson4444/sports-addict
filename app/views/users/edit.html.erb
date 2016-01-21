@@ -14,7 +14,7 @@
                   <%= f.collection_select :favorite_team, FavoriteTeam.all, :id, :name, { prompt: "Choose a favorite team" }, { id: "select"} %><br><br>
                   <%= f.label "Profile Description (optional)" %>
                   <%= f.text_area :description, rows: 2 %><br><br>
-                  <%= f.submit "Update Profile", class: "ui button" %>
+                  <%= f.submit "Update Profile", class: "ui blue button" %>
                   <% end %>
                   <div class="actions">
                   </div>
