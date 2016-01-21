@@ -1,17 +1,18 @@
-<div class="ui card">
-  <%= cache cache_for_profile(User, "profile") do %>
-    <div class="image">
-      <%= image_tag(user.profile_image) %>
-    </div>
+
+<%= cache cache_for_profile(current_user) do %>
+  <div class="ui card">
     <div class="content">
-      <a class="header username"><%= user.name %></a>
-    <div class="meta">
-      <span class="date"><%= user.favorite_team.city %> <%= user.favorite_team.name %></span>
+      <%= image_tag(user.profile_image, class: "right floated tiny ui image") %>
+      <div class="header">
+        <%= user.name %>
+      </div>
+      <div class="meta">
+        <%= user.favorite_team.city %> <%= user.favorite_team.name %>
+      </div>
+      <div class="description">
+        <%= user.description %>
+      </div>
     </div>
-    <div class="description">
-      <%= user.description %>
-    </div>
-    </div>
-    <%= link_to "Edit Profile", edit_user_path(current_user.id), class: "ui right floated blue button" %>
-  <% end %>
-</div>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id), class: "ui right floated blue button" %>
+  </div>
+<% end %>
