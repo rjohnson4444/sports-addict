@@ -1,6 +1,6 @@
 <h4 class="ui horizontal divider header">
   <i class="calendar icon"></i>
-  NBA Schedule 
+  NBA Schedule
 </h4>
 <h5><%= today_game_schedule[:date] %></h5>
 <div class="ui relaxed divided list"><br>
@@ -14,10 +14,10 @@
       <div class="content"><br>
         <div class="header"><%= game[:away_team] %> @ <%= game[:home_team] %></div>
         <div class="meta">
-          <span class="stay"><%= game[:time] %></span>
+          <span class="stay"> <strong><%= game[:time] %></strong></span>
         </div><br>
         <div class="description">
-          <p>Seen on: <%= game[:broadcast] %></p>
+          <p>Seen on: <strong><%= game[:broadcast] %></strong></p>
         </div>
       </div>
     </div><br>

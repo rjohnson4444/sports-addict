@@ -28,7 +28,7 @@
                     <% else %>
                       <%= form_for :follow, url: follows_path do |f| %>
                         <%= f.hidden_field :target_id, value: user.id %>
-                        <input class="ui mini right floated basic blue button" type="submit" value="Follow">
+                        <%= f.submit "Follow", class: "ui mini right floated basic blue button" %>
                         <% end %>
                     <% end %>
                   <% end %>

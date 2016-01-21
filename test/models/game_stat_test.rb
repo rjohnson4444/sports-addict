@@ -27,7 +27,7 @@ class GameStatTest < ActiveSupport::TestCase
       assert_equal "Oklahoma City", game_stats.venue_city
       assert_equal "OK", game_stats.venue_state
       assert_equal "73102", game_stats.venue_zipcode
-      assert_equal " 6 PM", game_stats.time_of_game
+      assert_equal " 6:00 PM", game_stats.time_of_game
     end
   end
 
