@@ -10,7 +10,6 @@ class SportRadarService
   end
 
   def nba_scheduled_games_for_today
-    # use 1/14/2016 for testing
     date = Time.now
     parse_json(connection.get("games/#{date.year}/#{date.month}/#{date.day}/schedule.json" + api_key))
   end

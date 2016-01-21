@@ -20,6 +20,12 @@ class ActiveSupport::TestCase
   end
 end
 
+class ActionController::TestCase
+  def json_response
+    JSON.parse(response.body)
+  end
+end
+
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
@@ -39,7 +45,6 @@ class ActionDispatch::IntegrationTest
       :info => {
         :name => "Ryan Johnson",
         :image => "http://si0.twimg.com/sticky/default_profile_images/default_profile_2_normal.png",
-        :favorite_team => "Denver Nuggets"
       },
       :credentials => {
         :token => ENV["OAUTH_TOKEN"],
@@ -70,6 +75,10 @@ end
 def create_conference
   Conference.create!(id: 2,
                      name: "WESTERN CONFERENCE")
+
+  Conference.create!(id: 1,
+                     name: "EASTERN CONFERENCE")
+
 end
 
 def create_division
@@ -79,6 +88,12 @@ def create_division
                    name: "Northwest",
                    conference_id: 2
                    )
+
+ Division.create!(id: 1,
+                  name: "Atlantic",
+                  conference_id: 1
+                  )
+
 end
 
 def make_favorite_teams
@@ -102,8 +117,7 @@ def make_favorite_teams
                        image: "blazers.gif"
                        )
 
-  FavoriteTeam.create!(id: 21,
-                       name: "Nuggets",
+  FavoriteTeam.create!(name: "Nuggets",
                        city: "Denver",
                        division_id: 5,
                        image: "nuggets.gif"
@@ -114,4 +128,17 @@ def make_favorite_teams
                        division_id: 5,
                        image: "timberwolves.gif"
                        )
+
+ FavoriteTeam.create!(name: "Knicks",
+                      city: "New York",
+                      division_id: 1,
+                      image: "knicks.gif"
+                      )
+
+  FavoriteTeam.create!(name: "76ers",
+                       city: "Philadelphia",
+                       division_id: 1,
+                       image: "76ers.gif"
+                       )
+
 end

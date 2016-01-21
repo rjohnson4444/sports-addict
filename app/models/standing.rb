@@ -1,13 +1,5 @@
 class Standing
 
-  def self.service
-    SportRadarService.new
-  end
-
-  def self.get_all_standings
-    @get_all_standings ||= service.favorite_team_standings
-  end
-
   def self.standings(favorite_team)
     all_standings = get_all_standings
     team_standings = parse_standings_response(all_standings, favorite_team)
@@ -15,6 +7,14 @@ class Standing
   end
 
   private
+
+    def self.service
+      SportRadarService.new
+    end
+
+    def self.get_all_standings
+      @get_all_standings ||= service.favorite_team_standings
+    end
 
     def self.build(data)
       OpenStruct.new(data)

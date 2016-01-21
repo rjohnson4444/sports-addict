@@ -7,10 +7,8 @@ class UserCanLoginWithTwitterTest < ActionDispatch::IntegrationTest
       login_user
 
       find('#select').find(:xpath, 'option[2]').select_option
-      fill_in "description", with: "This is my description"
       click_button "Update Profile"
 
-      save_and_open_page
       assert_equal 200, page.status_code
       assert_equal "/dashboard", current_path
       assert page.has_content?("Ryan Johnson")

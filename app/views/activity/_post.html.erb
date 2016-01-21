@@ -6,7 +6,7 @@
     <div class="summary">
       <strong><%= activity['actor'].name %></strong> posted on his page
       <div class="date">
-        <%= time_ago_in_words(activity['time']) %> ago
+        <%= time_ago_in_words(Time.zone.parse(activity['time'])) %> ago
       </div>
     </div>
     <div class="extra text">
