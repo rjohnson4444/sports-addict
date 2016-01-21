@@ -1,44 +1,48 @@
 require 'test_helper'
 
 class SportRadarServiceTest < ActiveSupport::TestCase
-  test "#standings" do
-    VCR.use_cassette("#standing") do
-      make_favorite_teams
-      favorite_team = "Denver Nuggets"
+  attr_reader :service
 
-      standings = Standing.standings(favorite_team).first
+  def service
+    @service = SportRadarService.new
+  end
 
-      assert_equal "Oklahoma City", standings.city
-      assert_equal "Thunder",       standings.name
-      assert_equal "29-12",         standings.record
+  test "favorite_team_standings returns all team standings" do
+    VCR.use_cassette("#favorite_team_standings") do
+      standings_response = service.favorite_team_standings
+
+      assert_equal "EASTERN CONFERENCE", standings_response[:conferences].first[:name]
+      assert_equal "WESTERN CONFERENCE", standings_response[:conferences].last[:name]
+      assert_equal 2, standings_response[:conferences].count
+
+      standings_response[:conferences].each do |conference|
+        assert conference[:name]
+        assert conference[:alias]
+        assert_equal 3, conference[:divisions].count
+      end
+
+      standings_response[:conferences].first[:divisions].each do |division|
+        assert division[:name]
+        assert division[:alias]
+        assert_equal 5, division[:teams].count
+      end
     end
   end
 
-  test "game_stats returns stats for favorite teams daily game" do
-    VCR.use_cassette("#game_stats") do
-      make_favorite_teams
+  test "nba_scheduled_games_for_today returns all games schedule for specific day" do
+    VCR.use_cassette("#nba_scheduled_games") do
+      scheduled_response = service.nba_scheduled_games_for_today
 
-      favorite_team = "Nuggets"
+      assert_equal "2016-01-20", scheduled_response[:date]
 
-      game_stats = GameStat.game_alert_info(favorite_team)
+      scheduled_response[:games].each do |game|
+        assert game[:status]
+        assert game[:scheduled]
+        assert game[:venue]
+        assert game[:broadcast]
+        assert game[:home]
+        assert game[:away]
+      end
     end
-  end
-
-  test "scores_by_quarter returns score for each team by quarter" do
-    VCR.use_cassette("gamestat#scores_by_quarter") do
-      make_favorite_teams
-
-      favorite_team = "Nuggets"
-
-      scores_by_quarter = GameStat.scores_by_quarter(favorite_team)
-    end
-  end
-
-  test "formating conference name" do
-    conference_name = "EASTERN CONFERENCE"
-
-    formatted_conference_name = Standing.format_conference_name(conference_name)
-
-    assert_equal "Eastern Conference", formatted_conference_name
   end
 end
