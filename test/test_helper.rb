@@ -20,6 +20,12 @@ class ActiveSupport::TestCase
   end
 end
 
+class ActionController::TestCase
+  def json_response
+    JSON.parse(response.body)
+  end
+end
+
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
@@ -39,7 +45,6 @@ class ActionDispatch::IntegrationTest
       :info => {
         :name => "Ryan Johnson",
         :image => "http://si0.twimg.com/sticky/default_profile_images/default_profile_2_normal.png",
-        :favorite_team => "Denver Nuggets"
       },
       :credentials => {
         :token => ENV["OAUTH_TOKEN"],
