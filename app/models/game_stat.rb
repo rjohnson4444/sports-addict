@@ -125,7 +125,7 @@ class GameStat
     end
 
     def self.game_stats_pending(game_stats)
-      time = game_stats[:scheduled].to_time.strftime("%l %p")
+      time = game_stats[:scheduled].to_time.strftime("%l:%M %p")
 
       {
         no_game_message: "Today's game starts at#{time}"
@@ -160,7 +160,7 @@ class GameStat
     end
 
     def self.format_time(time)
-      Time.zone.parse(time).to_time.strftime("%l %p")
+      Time.zone.parse(time).to_time.strftime("%l:%M %p")
     end
 
     def self.format_daily_game_info(opponent, venue_name, venue_address, venue_city, venue_state, venue_zipcode, broadcast_name, time_of_game)
