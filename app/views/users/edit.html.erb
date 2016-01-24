@@ -9,7 +9,7 @@
             <div class="ui container">
               <div class="ui form">
                 <div class="field">
-                  <%= form_for(User.new, url: home_path(current_user.id), :html => { method: :patch }) do |f| %>
+                  <%= form_for(@user) do |f| %>
                   <%= f.label "Favorite Team" %><br>
                   <%= f.collection_select :favorite_team, FavoriteTeam.all, :id, :name, { prompt: "Choose a favorite team" }, { id: "select"} %><br><br>
                   <%= f.label "Profile Description (optional)" %>

@@ -4,12 +4,6 @@ class HomeController < ApplicationController
   def index
   end
 
-  def update
-    current_user.update(favorite_team_id: params[:user][:favorite_team].to_i, description: params[:user][:description])
-    flash[:success] = "Your favorite team has been set!"
-    redirect_to dashboard_path
-  end
-
   def show
     @user = current_user
 

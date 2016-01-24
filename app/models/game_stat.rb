@@ -28,7 +28,7 @@ class GameStat
     end
 
     def self.get_quarter_by_quarter_stats(game_id)
-      @get_quarter_by_quarter_stats ||= service.game_summary(game_id) unless game_id.nil?
+      @get_quarter_by_quarter_stats = service.game_summary(game_id) unless game_id.nil?
     end
 
     def self.all_todays_game_info
