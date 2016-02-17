@@ -1,4 +1,4 @@
-== SportsAddict
+#SportsAddict
 
 A social media sports (NBA) fan application. The best way to keep up with your favorite NBA team.
 
