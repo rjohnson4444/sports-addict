@@ -6,4 +6,4 @@ Note: The production site uses SportRadar API. The free demo will expire on Febr
 
 [Production Link](http://sports-addict.herokuapp.com/)
 
-http://g.recordit.co/NTHK8fKRS2.gif
+![http://g.recordit.co/NTHK8fKRS2.gif]
