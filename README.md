@@ -2,7 +2,7 @@
 
 A social media sports (NBA) fan application. The best way to keep up with your favorite NBA team.
 
-Note: The production site uses SportRadar API. The free demo will expire on February 28. 
+Note: The production site uses SportRadar API. The free API demo from SportRadar will expire on February 28, so it may affect the quality of the production site. 
 
 [Production Link](http://sports-addict.herokuapp.com/)
 
