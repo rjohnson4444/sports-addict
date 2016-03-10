@@ -7,3 +7,21 @@ Note: The production site uses SportRadar API. The free API demo from SportRadar
 [Production Link](http://sports-addict.herokuapp.com/)
 
 ![GIF](http://g.recordit.co/NTHK8fKRS2.gif)
+
+### Configuration
+
+To install dependencies:
+
+`bundle install`
+
+To fire up the server:
+
+`rails s`
+
+To run application locally, visit:
+
+`localhost:3000`
+
+To run the test:
+
+`rake test`
