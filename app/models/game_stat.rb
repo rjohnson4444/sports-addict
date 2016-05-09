@@ -100,7 +100,7 @@ class GameStat
 
     def self.format_scheduled_games_today(date, games)
       {
-        date: date,
+        date:  date,
         games: games
       }
     end
@@ -197,14 +197,14 @@ class GameStat
     end
 
     def self.find_favorite_team_game(game, favorite_team)
-      return game[:home][:name]
+      return (game[:home][:name]
               .split(" ")
               .last(2)
-              .join(" ") == favorite_team ||
-             game[:away][:name]
+              .join(" ") == "Trail Blazers") ||
+             (game[:away][:name]
               .split(" ")
               .last(2)
-              .join(" ") if favorite_team == "Trail Blazers"
+              .join(" ") == "Trail Blazers") if favorite_team == "Trail Blazers"
 
       game[:home][:name]
         .split(" ")

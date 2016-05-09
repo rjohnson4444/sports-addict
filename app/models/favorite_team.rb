@@ -2,7 +2,6 @@ class FavoriteTeam < ActiveRecord::Base
   has_many :users
   belongs_to :division
 
-
   def self.division(favorite_team)
     division_name = find_by(name: favorite_team).division.name
     format_division_name(division_name)

@@ -1,7 +1,7 @@
 class Standing
 
   def self.standings(favorite_team)
-    all_standings = get_all_standings
+    all_standings  = get_all_standings
     team_standings = parse_standings_response(all_standings, favorite_team)
     team_standings.map { |team| build(team) }
   end
@@ -22,7 +22,7 @@ class Standing
 
     def self.parse_standings_response(all_standings, favorite_team)
       favorite_team_conference = find_conference(favorite_team)
-      favorite_team_division = find_division(favorite_team)
+      favorite_team_division   = find_division(favorite_team)
 
       all_standings[:conferences]
             .select { |conference| conference[:name] == favorite_team_conference }
