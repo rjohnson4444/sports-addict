@@ -11,6 +11,10 @@ class FavoriteTeam < ActiveRecord::Base
     find_by(name: favorite_team)
   end
 
+  def format_name_for_modal
+    "#{self.city} #{self.name}"
+  end
+
   private
 
     def self.find_team_name(favorite_team)
