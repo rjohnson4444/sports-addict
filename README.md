@@ -2,7 +2,7 @@
 
 A social media sports (NBA) fan application. The best way to keep up with your favorite NBA team.
 
-Note: The production site uses SportRadar API. The free API demo from SportRadar will expire on February 28, so it may affect the quality of the production site. 
+Note: The production site uses SportRadar API. The free API demo from SportRadar will expire on February 28, so it may affect the quality of the production site.
 
 [Production Link](http://sports-addict.herokuapp.com/)
 
@@ -13,6 +13,10 @@ Note: The production site uses SportRadar API. The free API demo from SportRadar
 To install dependencies:
 
 `bundle install`
+
+To get the db setup:
+
+`rake db:create db:migrate db:seed`
 
 To fire up the server:
 

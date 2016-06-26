@@ -30,7 +30,7 @@ class HomeController < ApplicationController
 
     def stream_feed(current_user_id)
       feed         ||= StreamRails.feed_manager.get_news_feeds(current_user_id)[:flat]
-      results      = feed.get['results']
+      results      = feed.get(limit: 10)['results']
       @activities  = @enricher.enrich_activities(results)
     end
 

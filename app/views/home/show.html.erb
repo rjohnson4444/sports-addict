@@ -1,43 +1,43 @@
 <% if @pick_favorite_team %>
-<html>
-  <body>
-    <%= render partial: 'partials/dashboard_modal', locals: { user: @user, favorite_teams: @favorite_teams } %>
-  </body>
-</html>
+  <html>
+    <body>
+      <%= render partial: 'partials/dashboard_modal', locals: { user: @user, favorite_teams: @favorite_teams } %>
+    </body>
+  </html>
 <% else %>
-<br><br><br><br><br>
-<body>
-  <div class="ui container">
-    <div class="ui equal width grid">
-      <div class="row">
-      <div class="column">
-        <div class="ui segment">
-          <%= render partial: 'partials/profile_info', locals: { user: @user } %>
-        </div>
-        <div class="ui segment">
-          <%= render partial: 'partials/standings', locals: { standings: @standings, favorite_team_division: @favorite_team_division, team_image: @team_image } %>
-        </div>
-      </div>
+  <br><br><br><br><br>
+  <body>
+    <div class="ui container">
+      <div class="ui equal width grid">
+        <div class="row">
+          <div class="column">
+            <div class="ui segment">
+              <%= render partial: 'partials/profile_info', locals: { user: @user } %>
+            </div>
+            <div class="ui segment">
+              <%= render partial: 'partials/standings', locals: { standings: @standings, favorite_team_division: @favorite_team_division, team_image: @team_image } %>
+            </div>
+          </div>
 
-      <div class="seven wide column">
-        <div class="ui segment">
-          <%= render partial: 'partials/game_stats', locals: { all_game_stats: @all_game_stats } %>
-        </div>
-        <div class="ui segment">
-          <%= render partial: 'partials/activity_feed', locals: { activities: @activities } %>
-        </div>
-      </div>
+          <div class="seven wide column">
+            <div class="ui segment">
+              <%= render partial: 'partials/game_stats', locals: { all_game_stats: @all_game_stats } %>
+            </div>
+            <div class="ui segment">
+              <%= render partial: 'partials/activity_feed', locals: { activities: @activities } %>
+            </div>
+          </div>
 
-      <div class="column">
-        <div class="ui segment">
-          <%= render partial: 'partials/daily_game_alert', locals: { game_alert: @game_alert_info, favorite_team_info: @team_info } %>
-        </div>
-        <div class="ui segment">
-          <%= render partial: 'partials/schedule', locals: { today_game_schedule: @today_game_schedule } %>
+          <div class="column">
+            <div class="ui segment">
+              <%= render partial: 'partials/daily_game_alert', locals: { game_alert: @game_alert_info, favorite_team_info: @team_info } %>
+            </div>
+            <div class="ui segment">
+              <%= render partial: 'partials/schedule', locals: { today_game_schedule: @today_game_schedule } %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</body>
+  </body>
 <% end %>
